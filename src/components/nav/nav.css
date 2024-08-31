@@ -1,0 +1,22 @@
+nav.navbar{
+    display: flex;
+    min-height: 120px;
+}
+
+ul.nav-links{
+    display: flex;
+    justify-content: space-evenly;
+    min-width: 25vw;
+}
+.nav-links li {
+    list-style-type: none;
+}
+
+ul.nav-links a {
+    color: #e5e5e5;
+    font-weight: bold;
+}
+
+li.nav-item:hover{
+    color: #b3b3b3;;
+}

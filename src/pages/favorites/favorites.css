@@ -1,0 +1,10 @@
+section.container-list{
+    display: flex;
+    flex-direction: column;
+}
+
+div.container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}
