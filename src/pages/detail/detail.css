@@ -1,3 +1,17 @@
-section.detail {
-    padding: 10rem 0;
+@media (max-width: 600px) {
+    section.detail {
+        padding: 3rem ;
+    }
+
+    section.detail h1 {
+        font-size:x-large;
+    }
+
+    div.options{
+        padding-top: 1rem;
+        display: grid;
+        gap: 10px;
+        justify-content: center;
+        align-content: center;
+    }
 }

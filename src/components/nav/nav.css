@@ -3,6 +3,13 @@ nav.navbar{
     min-height: 120px;
 }
 
+@media (max-width: 600px) {
+    nav.navbar{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 ul.nav-links{
     display: flex;
     justify-content: space-evenly;

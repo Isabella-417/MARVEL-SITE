@@ -1,11 +1,22 @@
 .card {
-    width: 300px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-  }
+  max-width: 300px;
+  max-height: 150px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.card h3 {
+  font-size: medium;
+}
+
+@media (max-width: 600px) {
+    .card h3 {
+      font-size: small;
+    }
+}
   
   .card:hover {
     transform: scale(1.05);

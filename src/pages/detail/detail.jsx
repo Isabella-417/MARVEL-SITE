@@ -17,30 +17,27 @@ function Detail() {
   const comicInformation = comic?.data?.results;
   const dispatch = useDispatch();
 
+  const favorite = useSelector((state) => state.favorite.value);
+  const markedAsFav = favorite.some((comic) => comic === name);
 
-  const favorite = useSelector(state => { console.log('state favorites => ', state); return state.favorite.value})
-  const markedAsFav = favorite.some(comic => comic === name)
-
-  const watched = useSelector(state => { console.log('state watched => ', state); return state.watched.value})
-  const markedAsWatched = watched.some(comic => comic === name)
-
+  const watched = useSelector((state) =>  state.watched.value);
+  const markedAsWatched = watched.some((comic) => comic === name);
 
   function handleFavorite() {
     if(markedAsFav){
-      dispatch(removeFromFavorite(name))
+      dispatch(removeFromFavorite(name));
     }else{
-      dispatch(addToFavorite(name))
+      dispatch(addToFavorite(name));
     }
   }
 
   function handleWatched() {
     if(markedAsWatched){
-      dispatch(removeWatched(name))
+      dispatch(removeWatched(name));
     }else{
-      dispatch(addToWatched(name))
+      dispatch(addToWatched(name));
     }
   }
-
 
   if (loading) return <Loading/>;
   if (error) return <p>Error: {error.message}</p>;
@@ -53,16 +50,18 @@ function Detail() {
     };
   });
 
-  const label = `${markedAsFav? "⭐": "Add to"} favorite`; 
-  const hasWatched = `${markedAsWatched? "✅" : "Mark as"} watched`
+  const label = `${markedAsFav ? "⭐" : "Add to"} favorite`;
+  const hasWatched = `${markedAsWatched ? "✅" : "Mark as"} watched`;
 
   return (
     <>
       <Nav links={links} />
       <section className="detail">
-        <h1>{ name }</h1>         
-        <button onClick={handleFavorite}>{label}</button>
-        <button onClick={handleWatched}>{hasWatched}</button>
+        <h1>{ name }</h1>
+        <div className="options">
+          <button onClick={handleFavorite}>{label}</button>
+          <button onClick={handleWatched}>{hasWatched}</button>
+        </div>
         <h2>Characters</h2>
         <Carousel images={characters}/>
       </section>

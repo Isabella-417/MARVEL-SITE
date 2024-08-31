@@ -1,11 +1,18 @@
 div.carousel-inner{
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
   flex-wrap: nowrap;
   max-width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
+}
+
+@media (min-width: 700px) {
+  div.carousel-inner{
+    flex-direction: row;
+  }
 }
 
 div.carouse-item{
