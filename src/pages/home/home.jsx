@@ -1,17 +1,18 @@
 import { Link } from "react-router-dom";
-import useFetch from "../../hooks/fetch";
-import { Nav, Loading } from "../../components";
 
-import {links} from "../../utils";
-import logo from "../../assets/cover.jpg";
+import useFetch from "../../hooks/fetch";
+import { Error, Loading, Nav  } from "../../components";
+
+import { links } from "../../utils";
+import logo from "../../assets/cover.png";
 import "./home.css";
 
 function Home() {
-  const url = `https://gateway.marvel.com/v1/public/comics`;
+  const url = `https://gateway.marvel.com/v1/public/comics?orderBy=title&limit=100&`;
   const { data: comics, loading, error } = useFetch(url, { method: "GET" });
 
   if (loading) return <Loading/>;
-  if (error) return <p>Error: {error.message}</p>;
+  if (error) return <Error message={error.message}/>;
 
   return (
     <>
@@ -22,18 +23,18 @@ function Home() {
           comics.data.results.map((comic) => {
             const img = `${comic.thumbnail.path}.${comic.thumbnail.extension}`;
             return (
-              <div className="comic" key={comic.id}>
+              <Link to={`/comic/${comic.id}/${comic.title}`} key={comic.id}>
+              <div className="comic">
                 <img
                   className="thumbnail"
                   src={img}
                   aria-label={`Comic ${comic.title} Thumbnail`}
                 />
                 <div className="comic--containerinfo">
-                  <Link to={`/comic/${comic.id}/${comic.title}`}>
                     <p>{comic.title}</p>
-                  </Link>
                 </div>
               </div>
+              </Link>
             );
           })}
       </section>

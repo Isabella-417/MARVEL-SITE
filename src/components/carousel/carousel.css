@@ -1,4 +1,4 @@
-div.carousel-inner{
+div.carousel__inner {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -10,24 +10,24 @@ div.carousel-inner{
 }
 
 @media (min-width: 700px) {
-  div.carousel-inner{
+  div.carousel-inner {
     flex-direction: row;
   }
 }
 
-div.carouse-item{
+div.carouse-item {
   cursor: pointer;
 }
 
-div.carousel-item:hover {
+div.carousel__item:hover {
   transform: scale(1.4);
   background-color: #141414;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   border-radius: 5px;
-
 }
 
-div.carousel-img{
+div.carousel__img {
   width: 50px;
   height: 50px;
 }

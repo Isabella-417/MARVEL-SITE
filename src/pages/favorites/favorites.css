@@ -1,7 +1,10 @@
-section.container-list{
+section.container__list{
     display: flex;
     flex-direction: column;
     padding: 2rem 0;
+    margin: 0 2rem;
+    max-height: 95%;
+    overflow-y: auto;
 }
 
 div.container{

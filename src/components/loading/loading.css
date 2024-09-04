@@ -1,12 +1,12 @@
 .container {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;     /* Center vertically */
-    height: 100vh;           /* Full viewport height */
-    margin: 0;               /* Remove default margin */
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
 img.loading {
-    max-width: 100%;         /* Ensure the image fits within the container */
-    height: auto;            /* Maintain aspect ratio */
-  }
+  max-width: 100%;
+  height: auto;
+}

@@ -11,11 +11,12 @@ const watchedSlice = createSlice({
       state.value.push(payload);
     },
     removeWatched: (state, action) => {
-      state.value = state.value.filter((comic) => comic !== action.payload);
+      state.value = state.value.filter((comic) => {
+        return comic.id !== action.payload;
+      });
     },
   },
 });
 
-
 export const { addToWatched, removeWatched } = watchedSlice.actions;
-export default watchedSlice.reducer
+export default watchedSlice.reducer;

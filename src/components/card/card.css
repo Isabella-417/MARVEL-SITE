@@ -1,11 +1,13 @@
 .card {
   max-width: 300px;
-  max-height: 150px;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   transition: transform 0.2s;
+  background-color: #f2f3f4;
+  margin-bottom: 2rem;
+  min-height: 500px;
 }
 
 .card h3 {
@@ -13,33 +15,32 @@
 }
 
 @media (max-width: 600px) {
-    .card h3 {
-      font-size: small;
-    }
+  .card h3 {
+    font-size: small;
+  }
 }
-  
-  .card:hover {
-    transform: scale(1.05);
-  }
-  
-  .card-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .card-content {
-    padding: 16px;
-  }
-  
-  .card-title {
-    margin: 0;
-    font-size: 1.5rem;
-    color: whitesmoke;
-  }
-  
-  .card-description {
-    margin-top: 8px;
-    font-size: 1rem;
-    color: #666;
-  }
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card__image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card__content {
+  padding: 16px;
+}
+
+.card__title {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #000;
+}
+
+.card-description {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: #666;
+}
