@@ -11,6 +11,7 @@ div.container{
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
+    background-color: #141414;
 }
 
 @media (max-width: 600px) {
